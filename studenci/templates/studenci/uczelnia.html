@@ -1,0 +1,11 @@
+{% extends 'szablon.html' %}
+
+    {% block naglowek %}Studenci- Dodaj Uczelnię{% endblock naglowek %}
+{% block tresc %}
+        <form action="." method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+        <br>
+        <input type="submit" value="Zapisz">
+    </form>
+{% endblock tresc %}

@@ -1,0 +1,24 @@
+{% extends 'szablon.html' %}
+
+{% block tresc %}
+
+<h2>Dodaj miasto</h2>
+
+    {% block naglowek %}Miasta{% endblock naglowek %}
+
+        <form action="." method="POST">
+            {% csrf_token %}
+        <input type="text" name="nazwa" size="30" maxlength="30">
+        <br>
+        <input type="text" name="kod" size="30" maxlength="6">
+        <br>
+        <input type="submit" value="Zapisz">
+    </form>
+
+<h2>Lista miast</h2>
+<ol>
+    {% for miasto in miasta %}
+        <li>{{ miasto.nazwa }}&nbsp;{{ miasto.kod }}</li>
+    {% endfor %}
+</ol>
+{% endblock tresc %}
